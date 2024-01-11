@@ -59,19 +59,20 @@ def display_companies_standalone():
 
 # UI Customization
 @Gooey(
-    program_name="Middleton Data Center",
+    program_name="CTE Program Management System",
     program_description="Vihaan Gowda, Vishal Naveen, Aditya Shukla",
-    auto_start=True,
     body_bg_color='#292727',
     header_bg_color="#1E1E1E",
     footer_bg_color="#292727",
-    error_control="#4006A0",
-    textcolor="#FFFFFF",
+    terminal_panel_color = "#292727",
+    terminal_font_color = "#FFFFFF",
+    tabbed_groups=True,
+    advanced=True,
     menu=[
         {'name': 'Program Information', 'items': [
-            {'type': 'AboutDialog', 'menuTitle': 'About This Program', 'name': 'Middleton Data Center',
+            {'type': 'AboutDialog', 'menuTitle': 'About This Program', 'name': 'CTE Program Management System',
              'description': 'Vihaan Gowda, Vishal Naveen, Aditya Shukla'},
-            {'type': 'Link', 'menuTitle': 'Source Code', 'url': 'https://your-source-code-url'},
+            {'type': 'Link', 'menuTitle': 'Source Code', 'url': 'https://github.com/VihaanGowda/ctecareerandtechnicaldatabase/tree/main'},
         ]},
     ]
 )
@@ -82,9 +83,7 @@ def main():
         "Filter Settings",
         "Filter Partner Information"
     )
-    # Search Bar
     filter_group.add_argument("Search", help="Enter the search query", default=None, widget="TextField")
-    # Sorting A-Z, Z-A
     filter_group.add_argument("option", choices=["Sort A-Z", "Sort Z-A"], metavar="Sorting", help="Sorting our businesses", default=None, widget="Dropdown")
     
     args = parser.parse_args()
