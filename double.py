@@ -9,12 +9,12 @@ def create_gui():
     root = tk.Tk()
     root.title("Beautiful GUI")
 
-    # Set purple background
-    root.configure(bg='#292727')
+    # Set grey background
+    root.configure(bg='#2f3030')
 
     # Create scrollable frame
-    canvas = tk.Canvas(root, bg='#292727', highlightthickness=0)
-    frame = tk.Frame(canvas, bg='#292727', bd=10)
+    canvas = tk.Canvas(root, bg='#2f3030', highlightthickness=0)
+    frame = tk.Frame(canvas, bg='#2f3030', bd=10)
     scrollbar = ttk.Scrollbar(root, orient="vertical", command=canvas.yview)
     canvas.configure(yscrollcommand=scrollbar.set)
 
@@ -50,10 +50,8 @@ def create_gui():
         {"name": "SkyLink Robotics", "website": "www.skylinkrobotics.com", "contact": "Lisa Taylor", "email": "lisa@skylinkrobotics.com", "phone": "555-567-8901", "description": "SkyLink Robotics designs and manufactures cutting-edge robotic systems for industrial automation and exploration."},
         {"name": "FinanceFleet Solutions", "website": "www.financefleet.com", "contact": "David Reynolds", "email": "david@financefleet.com", "phone": "555-678-9012", "description": "FinanceFleet Solutions offers comprehensive financial management tools for businesses, optimizing budgeting and expense tracking."},
         {"name": "SolarCraft Innovations", "website": "www.solarcraftinnovations.com", "contact": "Sophie Reynolds", "email": "sophie@solarcraftinnovations.com", "phone": "555-567-8901", "description": "SolarCraft Innovations harnesses solar energy for sustainable solutions, offering solar power systems and consulting services."}
-        
-        
     ]
-    
+
     # Add boxes to the frame
     for values in box_values:
         box_frame = create_box(frame, values)
@@ -90,6 +88,11 @@ def create_gui():
 
     feedback_label = tk.Label(root, text="", font=('Arial', 12), fg='green', bg='#8675A9')
     feedback_label.pack(pady=20)
+
+    root.mainloop()
+
+# ... (rest of the code remains unchanged)
+
 
     root.mainloop()
 
