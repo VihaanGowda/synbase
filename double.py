@@ -7,14 +7,14 @@ def create_gui():
     global root, feedback_label, frame
 
     root = tk.Tk()
-    root.title("Beautiful GUI")
+    root.title("CTE Career and Technical Database")
 
     # Set grey background
-    root.configure(bg='#2f3030')
+    root.configure(bg='#424242')
 
     # Create scrollable frame
-    canvas = tk.Canvas(root, bg='#2f3030', highlightthickness=0)
-    frame = tk.Frame(canvas, bg='#2f3030', bd=10)
+    canvas = tk.Canvas(root, bg='#424242', highlightthickness=0)
+    frame = tk.Frame(canvas, bg='#424242', bd=10)
     scrollbar = ttk.Scrollbar(root, orient="vertical", command=canvas.yview)
     canvas.configure(yscrollcommand=scrollbar.set)
 
@@ -58,7 +58,7 @@ def create_gui():
         box_frame.pack(pady=10)
 
     # Add search feature
-    search_label = tk.Label(root, text="Search:", font=('Arial', 14), bg='#2f3030', fg='white')
+    search_label = tk.Label(root, text="Search:", font=('Arial', 14), bg='#424242', fg='white')
     search_label.pack(pady=5)
     search_entry = tk.Entry(root, font=('Arial', 14), bd=5)
     search_entry.pack(pady=5)
@@ -86,7 +86,7 @@ def create_gui():
     # Bind mousewheel to scroll
     root.bind_all("<MouseWheel>", lambda event, canvas=canvas: on_mousewheel(event, canvas))
 
-    feedback_label = tk.Label(root, text="", font=('Arial', 12), fg='green', bg='#8675A9')
+    feedback_label = tk.Label(root, text="", font=('Arial', 12), fg='green', bg='#424242')
     feedback_label.pack(pady=20)
 
     root.mainloop()
