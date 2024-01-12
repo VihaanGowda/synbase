@@ -2,6 +2,7 @@
 from gooey import Gooey, GooeyParser
 from argparse import ArgumentParser
 
+
 # Values which will be utilized for each company
 company_values = [
     {"name": "TechEdu Solutions", "website": "www.techedusolutions.com", "contact": "Sarah Anderson", "email": "sarah@techedusolutions.com", "phone": "555-123-4567", "description": "TechEdu Solutions provides comprehensive technology solutions for CTE programs, including virtual labs, interactive learning platforms, and student assessment tools."},
@@ -66,8 +67,11 @@ def display_companies_standalone():
     footer_bg_color="#292727",
     terminal_panel_color = "#292727",
     terminal_font_color = "#FFFFFF",
-    tabbed_groups=True,
+    tabbed_groups=False,
     advanced=True,
+    monospace_display=True,
+    body_font_color = "White",
+    clear_before_run = True,
     menu=[
         {'name': 'Program Information', 'items': [
             {'type': 'AboutDialog', 'menuTitle': 'About This Program', 'name': 'CTE Program Management System',
@@ -83,14 +87,38 @@ def main():
         "Filter Settings",
         "Filter Partner Information"
     )
-    filter_group.add_argument("Search", help="Enter the search query", default=None, widget="TextField")
-    filter_group.add_argument("option", choices=["Sort A-Z", "Sort Z-A"], metavar="Sorting", help="Sorting our businesses", default=None, widget="Dropdown")
+    add_group = parser.add_argument_group(
+        "Add Partner Corporation/Group"
+        
+    )
+    filter_group.add_argument("Search", help="*Currently Functional For Company Names*", default=None, widget="TextField", nargs = "?")
+    filter_group.add_argument("option", choices=["Sort A-Z", "Sort Z-A"], metavar="Sorting", help="Sorting our businesses", default=None, widget="Dropdown", nargs="?")
+    
+    add_group.add_argument("Name", help="Name of the Organization", action="store", nargs = "?")
+    add_group.add_argument("Website", help="Name of the Organization", action="store", nargs = "?")
+    add_group.add_argument("Contact", help="Name of the Organization", action="store", nargs = "?")
+    add_group.add_argument("Email", help="Name of the Organization", action="store", nargs = "?")
+    add_group.add_argument("Phone", help="Name of the Organization", action="store", nargs = "?")
+    add_group.add_argument("Description", help="Name of the Organization", action="store", nargs = "?")
+    
     
     args = parser.parse_args()
     search_query = args.Search
-
     
-    display_matching_boxes(search_query)
+    # Append new company
+    new_company = {"name": args.Name, "website": args.Website, "contact": args.Contact, "email": args.Email, "phone": args.Phone, "description": args.Description}
 
+    if args.Search is not None:
+        display_matching_boxes(search_query)
+    elif args.Search is None:
+        display_companies_standalone()
+    else:
+        print("Please Re-Load the Program")
+        
+
+
+        
+
+   
 
 main()
