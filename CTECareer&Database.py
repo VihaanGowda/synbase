@@ -1,14 +1,17 @@
+# Importing Modules
 import tkinter as tk
 from tkinter.font import Font
 from tkinter import ttk, messagebox
 import re
 
+# Creating main GUI
 def create_gui():
     global root, feedback_label, frame
-
+    
+    # Creating window
     root = tk.Tk()
     root.title("CTE Career and Technical Database")
-
+    
     # Set grey background
     root.configure(bg='#424242')
 
@@ -88,11 +91,6 @@ def create_gui():
 
     feedback_label = tk.Label(root, text="", font=('Arial', 12), fg='green', bg='#424242')
     feedback_label.pack(pady=20)
-
-    root.mainloop()
-
-# ... (rest of the code remains unchanged)
-
 
     root.mainloop()
 
