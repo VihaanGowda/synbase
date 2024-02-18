@@ -9,12 +9,17 @@ def create_gui():
     root = tk.Tk()
     root.title("CTE Career and Technical Database")
 
+    color1 = '#ef63ff'
+    color2 = 'black'
+
+
+
     # Set grey background
-    root.configure(bg='#424242')
+    root.configure(bg='#121212')
 
     # Create scrollable frame
-    canvas = tk.Canvas(root, bg='#424242', highlightthickness=0)
-    frame = tk.Frame(canvas, bg='#424242', bd=10)
+    canvas = tk.Canvas(root, bg='#121212', highlightthickness=0)
+    frame = tk.Frame(canvas, bg='#121212', bd=10)
     scrollbar = ttk.Scrollbar(root, orient="vertical", command=canvas.yview)
     canvas.configure(yscrollcommand=scrollbar.set)
 
@@ -58,26 +63,26 @@ def create_gui():
         box_frame.pack(pady=10)
 
     # Add search feature
-    search_label = tk.Label(root, text="Search:", font=('Arial', 14), bg='#424242', fg='white')
+    search_label = tk.Label(root, text="Search:", font=('Arial', 14), bg='#121212', fg='white')
     search_label.pack(pady=5)
-    search_entry = tk.Entry(root, font=('Arial', 14), bd=5)
+    search_entry = tk.Entry(root, font=('Arial', 14), bd=5, highlightthickness=2, highlightbackground=color2, highlightcolor=color1, width=13, border=0)
     search_entry.pack(pady=5)
-    search_button = tk.Button(root, text="Search", command=lambda: search_boxes(frame, box_values, search_entry.get()), font=('Arial', 14), bd=5)
+    search_button = tk.Button(root, text="Search", command=lambda: search_boxes(frame, box_values, search_entry.get()), font=('Arial', 14), bd=5, foreground=color1, background=color2, activebackground=color1, activeforeground=color2, highlightthickness=2, highlightbackground=color2, highlightcolor=color1, width=13, height=2, border=0, cursor="hand1")
     search_button.pack(pady=10)
 
     # Add create button
-    create_button = tk.Button(root, text="Create", command=lambda: create_new_box(frame, box_values), font=('Arial', 14), bd=5)
+    create_button = tk.Button(root, text="Create", command=lambda: create_new_box(frame, box_values), font=('Arial', 14), bd=5, foreground=color1, background=color2, activebackground=color1, activeforeground=color2, highlightthickness=2, highlightbackground=color2, highlightcolor=color1, width=13, height=2, border=0, cursor="hand1")
     create_button.pack(pady=10)
 
     # Add sorting button with popup
-    sort_button = tk.Button(root, text="Sort", command=lambda: show_sort_popup(sort_boxes, frame, box_values), font=('Arial', 14), bd=5)
+    sort_button = tk.Button(root, text="Sort", command=lambda: show_sort_popup(sort_boxes, frame, box_values), font=('Arial', 14), bd=5, foreground=color1, background=color2, activebackground=color1, activeforeground=color2, highlightthickness=2, highlightbackground=color2, highlightcolor=color1, width=13, height=2, border=0, cursor="hand1")
     sort_button.pack(pady=10)
 
     # Add chatbot entry and button
-    chatbot_entry = tk.Entry(root, font=('Arial', 14), bd=5)
+    chatbot_entry = tk.Entry(root, font=('Arial', 14), bd=5, highlightthickness=2, highlightbackground=color2, highlightcolor=color1, width=13, border=0)
     chatbot_entry.pack(pady=5)
 
-    chatbot_button = tk.Button(root, text="Ask Chatbot", command=lambda: ask_chatbot(chatbot_entry.get()), font=('Arial', 14), bd=5)
+    chatbot_button = tk.Button(root, text="Ask Chatbot", command=lambda: ask_chatbot(chatbot_entry.get()), font=('Arial', 14), bd=5, foreground=color1, background=color2, activebackground=color1, activeforeground=color2, highlightthickness=2, highlightbackground=color2, highlightcolor=color1, width=13, height=2, border=0, cursor="hand1")
     chatbot_button.pack(pady=10)
 
     # Configure canvas scrolling
@@ -86,7 +91,7 @@ def create_gui():
     # Bind mousewheel to scroll
     root.bind_all("<MouseWheel>", lambda event, canvas=canvas: on_mousewheel(event, canvas))
 
-    feedback_label = tk.Label(root, text="", font=('Arial', 12), fg='green', bg='#424242')
+    feedback_label = tk.Label(root, text="", font=('Arial', 12), fg='green', bg='#121212')
     feedback_label.pack(pady=20)
 
     root.mainloop()
