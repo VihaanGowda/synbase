@@ -10,7 +10,7 @@ def create_gui():
     
     # Creating window
     root = tk.Tk()
-    root.title("CTE Career and Technical Database")
+    root.title("Synbase")
     
     # Set grey background
     root.configure(bg='#424242')
