@@ -8,7 +8,6 @@ def create_gui():
 
     root = tk.Tk()
     root.title("Synbase")
-    root.iconbitmap(r'synbaseIcon.ico')
 
     color1 = '#ef63ff'
     color2 = 'black'
