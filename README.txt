@@ -4,7 +4,9 @@
 
 Created by Vihaan Gowda, Aditya Shukla, Vishal Naveen
 
-*** The purpose of this program is to provide local school's with a functional database which will allow administrators and users to store and reference CTE partners for usage.***
+The purpose of this program is to provide local school's with a functional database which will allow administrators and users to store and reference CTE partners for usage.
+We provide functionality to add new partners along with information, search for partners in the existing database, and ask our Chatbot questions regarding the partners and the program itself.
+
 
 Please reference the source code provided when grading our submission
 
