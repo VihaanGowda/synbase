@@ -1,6 +1,6 @@
 2023 - 2024 FBLA Coding and Programming Submission (Synbase)
 
-** Download the .py file included in the repository and run with python version 3.11+ installed **
+** Download the entire file included in the repository and run with python version 3.11+ installed | Do not alter contents of file **
 
 Created by Vihaan Gowda, Aditya Shukla, Vishal Naveen
 
