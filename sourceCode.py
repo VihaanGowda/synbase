@@ -7,7 +7,7 @@ def create_gui():
     global root, feedback_label, frame
 
     root = tk.Tk()
-    root.title("CTE Career and Technical Database")
+    root.title("Synbase")
 
     color1 = '#ef63ff'
     color2 = 'black'
